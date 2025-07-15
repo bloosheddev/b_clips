@@ -1,3 +1,4 @@
+import 'package:b_clips/data/notifiers.dart';
 import 'package:flutter/material.dart';
 
 class NavbarWidget extends StatelessWidget {
@@ -5,6 +6,20 @@ class NavbarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ValueListenableBuilder(
+      valueListenable: selectedPageNotifier,
+      builder: (context, selectedPage, child) {
+        return NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.note), label: "Home"),
+            NavigationDestination(icon: Icon(Icons.add), label: "New Note"),
+          ],
+          onDestinationSelected: (value) {
+            selectedPageNotifier.value = value;
+          },
+          selectedIndex: selectedPage,
+        );
+      },
+    );
   }
 }
