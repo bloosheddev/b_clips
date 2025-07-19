@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ClipsCardWidget extends StatelessWidget {
-  const ClipsCardWidget({super.key});
+  const ClipsCardWidget({
+    super.key,
+    required this.title,
+    required this.description,
+  });
+
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +24,13 @@ class ClipsCardWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Jadi gini......",
+                  title,
                   textAlign: TextAlign.start,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
                 ),
                 SizedBox(height: 5.0),
                 Text(
-                  "Update Peringatan Dini Cuaca Wilayah - Sumatera Selatan Tgl. 17 Juli 2025 pkl. 19:20 WIBPrakirawan - BMKG - Sumatera Selatan",
+                  description,
                   textAlign: TextAlign.start,
                   style: TextStyle(fontSize: 17.5),
                 ),

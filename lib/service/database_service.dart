@@ -13,10 +13,8 @@ class FirestoreService {
     });
   }
 
-  Stream<QuerySnapshot> getClipsStream() {
-    final clipsStream = clips
-        .orderBy('timestamp', descending: true)
-        .snapshots();
+  Future<QuerySnapshot> getClipsStream() {
+    final clipsStream = clips.orderBy('timestamp', descending: true).get();
 
     return clipsStream;
   }

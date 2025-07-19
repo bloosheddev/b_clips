@@ -11,27 +11,48 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final FirestoreService firestoreService = FirestoreService();
+
+  Future _refresh() async {
+    return setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              SizedBox(height: 20.0),
-              ...List.generate(1, (index) {
-                return ClipsCardWidget();
-              }),
-              // StreamBuilder<QuerySnapshot>(
-              //   stream: FirestoreService.getClipsStream(),
-              //   builder: (context, snapshot) {
-              //     if (snapshot.hasData) {
-              //       List clipList = snapshot.data!.docs;
-              //     }
-              //   },
-              // ),
-              SizedBox(height: 20.0),
-            ],
+      body: RefreshIndicator(
+        onRefresh: _refresh,
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                SizedBox(height: 20.0),
+                FutureBuilder<QuerySnapshot>(
+                  future: firestoreService.getClipsStream(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return LinearProgressIndicator();
+                    }
+                    if (snapshot.hasError) {
+                      return Text('Error: ${snapshot.error}');
+                    }
+                    if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+                      return Text('No clips found.');
+                    }
+                    return Column(
+                      children: snapshot.data!.docs.map((doc) {
+                        final data = doc.data() as Map<String, dynamic>;
+                        return ClipsCardWidget(
+                          title: data['title'] ?? 'No Title',
+                          description: data['description'] ?? 'No Description',
+                        );
+                      }).toList(),
+                    );
+                  },
+                ),
+                SizedBox(height: 20.0),
+              ],
+            ),
           ),
         ),
       ),
