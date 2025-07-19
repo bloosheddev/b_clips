@@ -11,8 +11,11 @@ class NavbarWidget extends StatelessWidget {
       builder: (context, selectedPage, child) {
         return NavigationBar(
           destinations: [
-            NavigationDestination(icon: Icon(Icons.note), label: "Home"),
-            NavigationDestination(icon: Icon(Icons.add), label: "New Note"),
+            NavigationDestination(
+              icon: Icon(Icons.note),
+              label: "Discover Clips",
+            ),
+            NavigationDestination(icon: Icon(Icons.add), label: "New Clip"),
           ],
           onDestinationSelected: (value) {
             selectedPageNotifier.value = value;

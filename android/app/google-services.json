@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "868076804356",
+    "project_id": "robotic-jet-440410-h5",
+    "storage_bucket": "robotic-jet-440410-h5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868076804356:android:b325db1b2fda8263b3d851",
+        "android_client_info": {
+          "package_name": "com.bloosheddev.b_clips"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZX9KgxB0HK8gy6rTcIpaDCmBEY0Z6YVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

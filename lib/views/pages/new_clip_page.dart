@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class NewNotePage extends StatelessWidget {
-  const NewNotePage({super.key});
+class NewClipPage extends StatelessWidget {
+  const NewClipPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +12,7 @@ class NewNotePage extends StatelessWidget {
         child: Column(
           children: [
             TextField(
+              maxLength: 30,
               decoration: InputDecoration(
                 hintText: "Title",
                 border: OutlineInputBorder(),
@@ -18,6 +20,8 @@ class NewNotePage extends StatelessWidget {
             ),
             SizedBox(height: 20.0),
             TextField(
+              maxLength: 150,
+              maxLines: 4,
               decoration: InputDecoration(
                 hintText: "Description",
                 border: OutlineInputBorder(),
