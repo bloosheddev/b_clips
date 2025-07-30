@@ -15,6 +15,8 @@ class PageControl extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarBrightness: Brightness.dark,
           systemNavigationBarIconBrightness: Brightness.dark,
           systemNavigationBarColor: Colors.blueGrey[50],
         ),
