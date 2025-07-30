@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Accept Android Licenses
+        run: yes | flutter doctor --android-licenses
+
       - name: Build APK
         run: flutter build apk --release
 
