@@ -3,6 +3,7 @@ import 'package:b_clips/views/pages/home_page.dart';
 import 'package:b_clips/views/pages/new_clip_page.dart';
 import 'package:b_clips/views/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 List<Widget> pageList = [HomePage(), NewClipPage()];
 
@@ -13,6 +14,10 @@ class PageControl extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        systemOverlayStyle: SystemUiOverlayStyle(
+          systemNavigationBarIconBrightness: Brightness.dark,
+          systemNavigationBarColor: Colors.blueGrey[50],
+        ),
         title: Text("b_clips"),
         centerTitle: true,
         titleTextStyle: TextStyle(
