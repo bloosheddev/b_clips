@@ -8,3 +8,4 @@ A new Flutter project.
 - Capital character TextField.
 - Clips still submitted even if there isn't internet available (+ error snackbar).
 - Make the discover pullable if there is no clips
+- "No Internet" Labels.
