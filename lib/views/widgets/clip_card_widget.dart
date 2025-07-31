@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ClipsCardWidget extends StatelessWidget {
-  const ClipsCardWidget({
+class ClipCardWidget extends StatelessWidget {
+  const ClipCardWidget({
     super.key,
     required this.title,
     required this.description,
