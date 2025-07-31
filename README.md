@@ -3,4 +3,8 @@
 A new Flutter project.
 
 ## Todo
-- 🐞 Topbar is transparent (it should follow the appbar color).
+🐞🐞🐞
+- Topbar only change to dark when init.
+- Capital character TextField.
+- Clips still submitted even if there isn't internet available (+ error snackbar).
+- Make the discover pullable if there is no clips
