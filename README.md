@@ -13,7 +13,7 @@
 </sub>
 </p>
 
-![GitHub release](https://img.shields.io/github/v/release/bloosheddev/b_clips)
+[![GitHub release](https://img.shields.io/github/v/release/bloosheddev/b_clips)](https://github.com/bloosheddev/b_clips/releases)
 [![Android Build](https://github.com/bloosheddev/b_clips/actions/workflows/android-build.yml/badge.svg?style=for-the-badge)](https://github.com/bloosheddev/b_clips/actions/workflows/android-build.yml)
 
 </h1>
