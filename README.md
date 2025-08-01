@@ -76,6 +76,8 @@ flutter pub get
 
 #### 3. Set Up Firebase
 
+###### Skip to step 5 if you wanted to use the original b_clips database!
+
 1. Go to Firebase Console
 2. Create or open a Firebase project
 3. Add an Android and/or iOS app in the Firebase project settings
